@@ -11,25 +11,13 @@ class Counter extends Component {
     }  
     
     increment = (evt) => {
-        const counter = this.props.count // Get count from props
-
         // Call increment
-        this.props.increment(counter)
-
-		this.setState({
-			newCount: ''
-		})
+        this.props.increment(this.props.count)
     };
     
     decrement = (evt) => {
-        const counter = this.props.count // Get count from props
-
         // Call decrement
-        this.props.decrement(counter)
-
-		this.setState({
-			count: ''
-		})
+        this.props.decrement(this.props.count)
     };
 
     incrementIfOdd = () => {

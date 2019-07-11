@@ -15,17 +15,16 @@ export default (state = initialState, action) => {
     case INCREMENT:
       // Action Count to increase by 1
       newCount = parseInt(action.payload.count) + 1
-      console.log(newCount)
       return { 
         ...state,
         count: newCount
       }
     case DECREMENT:
       // Action Count to decrease by 1
-      newCount = state[action.payload.count] - 1
+      newCount = parseInt(action.payload.count) - 1
       return { 
         ...state,
-        [action.payload.count]: newCount
+        count: newCount
       }
     default:
       return state;
