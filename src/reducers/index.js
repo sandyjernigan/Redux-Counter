@@ -1,5 +1,5 @@
 import { INCREMENT, DECREMENT } from '../actions';
-let newCount
+let newCount = 0
 
 const initialState = {
   count: 0
@@ -14,10 +14,11 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       // Action Count to increase by 1
-      newCount = state[action.payload.count] + 1
+      newCount = parseInt(action.payload.count) + 1
+      console.log(newCount)
       return { 
         ...state,
-        [action.payload.count]: newCount
+        count: newCount
       }
     case DECREMENT:
       // Action Count to decrease by 1
